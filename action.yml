@@ -1,0 +1,43 @@
+name: patch-cloud
+description: >-
+  On pull requests, checks this project's package.json and lockfile against
+  the public patch-cloud feed. When a dependency's upstream CI is dark and a
+  packaged fix is available, posts or updates a single comment with the
+  opt-in install line and how to opt out. Opt-in only; uses GITHUB_TOKEN;
+  posts no comment when nothing is dark.
+author: fitzyracing1
+branding:
+  icon: alert-circle
+  color: purple
+
+inputs:
+  feed-url:
+    description: URL of the patch-cloud JSON feed.
+    required: false
+    default: https://patch-cloud-production.up.railway.app/feed.json
+  github-token:
+    description: Token used to post or update the pull request comment.
+    required: false
+    default: ${{ github.token }}
+  comment:
+    description: >-
+      If true, post or update a single PR comment when a dark dependency is
+      found. If false, only write the job summary.
+    required: false
+    default: 'true'
+  working-directory:
+    description: Project directory that contains package.json (relative to the workspace).
+    required: false
+    default: '.'
+
+outputs:
+  dark-count:
+    description: Number of dependencies whose upstream light is currently dark.
+  fix-count:
+    description: Number of those dark dependencies that have a packaged patch-cloud fix.
+  commented:
+    description: Whether a pull request comment was posted or updated (true or false).
+
+runs:
+  using: node20
+  main: index.mjs

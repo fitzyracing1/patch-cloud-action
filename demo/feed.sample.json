@@ -1,0 +1,51 @@
+{
+  "version": 1,
+  "service": "patch-cloud",
+  "generatedAt": "2026-11-11T22:00:00.000Z",
+  "registry": "https://patch-cloud-production.up.railway.app",
+  "publicUrl": "https://patch-cloud-production.up.railway.app",
+  "statusUrl": "https://patch-cloud-production.up.railway.app/status",
+  "feed": {
+    "json": "https://patch-cloud-production.up.railway.app/feed.json",
+    "atom": "https://patch-cloud-production.up.railway.app/feed.atom",
+    "rss": "https://patch-cloud-production.up.railway.app/feed.rss"
+  },
+  "optIn": {
+    "install": "npm install <pkg> --registry https://patch-cloud-production.up.railway.app",
+    "npmrc": "registry=https://patch-cloud-production.up.railway.app/",
+    "optOut": "Remove the --registry flag or the registry= line from .npmrc and reinstall to use the official npm registry."
+  },
+  "counts": {
+    "dark": 1,
+    "fixAvailable": 1
+  },
+  "items": [
+    {
+      "package": "next",
+      "version": "16.4.0",
+      "upstreamRepo": "vercel/next.js",
+      "light": "dark",
+      "failingRunUrl": "https://github.com/vercel/next.js/actions/runs/43091587389",
+      "since": "2026-11-11T19:54:53Z",
+      "daysDark": 0,
+      "daysDarkAtLeast": false,
+      "lastPassingAt": "2026-11-11T19:59:07Z",
+      "fork": {
+        "repo": "fitzyracing1/next.js",
+        "branch": "rspack-manifest-fix",
+        "url": "https://github.com/fitzyracing1/next.js",
+        "branchUrl": "https://github.com/fitzyracing1/next.js/tree/rspack-manifest-fix"
+      },
+      "fixAvailable": true,
+      "rewrite": "active",
+      "install": "npm install next@16.4.0 --registry https://patch-cloud-production.up.railway.app",
+      "optOut": "Remove the --registry flag or the registry= line from .npmrc and reinstall to use the official npm registry.",
+      "note": "CI-only fix (Rspack test manifests).",
+      "upstream": {
+        "url": "https://github.com/vercel/next.js/pull/100001",
+        "kind": "pr",
+        "state": "open"
+      }
+    }
+  ]
+}

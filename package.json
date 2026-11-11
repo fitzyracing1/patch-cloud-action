@@ -1,0 +1,11 @@
+{
+  "name": "patch-cloud-action",
+  "version": "0.1.0",
+  "private": true,
+  "description": "GitHub Action that comments on pull requests when dependencies have a dark upstream CI light and a patch-cloud fix is available.",
+  "type": "module",
+  "main": "index.mjs",
+  "scripts": {
+    "test": "node test/action.test.mjs"
+  }
+}

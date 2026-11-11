@@ -1,0 +1,18 @@
+# Opt-in workflow: copy this file to .github/workflows/patch-cloud.yml
+# in a repository you want the patch-cloud check on.
+name: patch-cloud
+on:
+  pull_request:
+jobs:
+  patch-cloud:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+    steps:
+      - uses: actions/checkout@v4
+      - uses: fitzyracing1/patch-cloud-action@v0.1.0
+        # Optional:
+        # with:
+        #   feed-url: https://patch-cloud-production.up.railway.app/feed.json
+        #   comment: true
